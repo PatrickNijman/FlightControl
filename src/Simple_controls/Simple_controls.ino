@@ -1,6 +1,9 @@
 #include <IBusBM.h>
 #include <Servo.h>
-
+/*
+ * This code can be used to directly control the servos of an RC plane.
+ */
+ 
 IBusBM IBus;    // IBus object
 Servo rudderservo;  // create servo object to control a servo
 Servo elevatorservo;
@@ -36,6 +39,7 @@ void loop() {
 
 
 servo_values_struct determine_servo_values(IBusBM ibus) { 
+  
     servo_values_struct s; 
     
     s.aileron_r = convert_aileron_servo_val(ibus.readChannel(0));
